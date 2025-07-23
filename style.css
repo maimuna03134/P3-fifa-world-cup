@@ -56,9 +56,81 @@ img {
   display: block;
 }
 
+/* upcoming-matches-style */
+.upcoming-matches {
+  display: flex;
+  padding: 50px 0;
+  gap: 50px;
+}
+.upcoming-matches-left {
+  background-color: black;
+  width: 20%;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.upcoming-matches-left .primary-btn:nth-child(1),
+.upcoming-matches-left .primary-btn:nth-child(2) {
+  background-color: white;
+  color: black;
+}
+.upcoming-matches-right {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.upcoming-matches-right .card {
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 10px 10px 0px 0px;
+ 
+}
+.upcoming-matches-right .card img {
+  height: 170px;
+  width: 300px;
+}
+.upcoming-matches-right .card .card-body {
+  margin: 15px 0;
+  padding: 0 20px;
+}
+.upcoming-matches-right .card .card-body .primary-btn {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 7px 15px;
+  ont-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.upcoming-matches-right .card .card-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 27px;
+  margin: 15px 0;
+}
+.upcoming-matches-right .card .card-bottom{
+  display: flex;
+  gap: 20px;
+  color: #161616cc;
+  padding: 0 20px 20px;
+}
+.upcoming-matches-right .card .card-bottom .fa-solid{
+  border: 1.5px dashed rgba(22, 22, 22, 0.8);
+}
+.upcoming-matches-last-btn{
+  display: none;
+  /* width: 100%; */
+}
+
+
 /* Responsive Design - Media Queries */
 /* laptop/tap device*/
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 992px){
   /* container */
   .container {
     margin: 20px 20px;
@@ -68,6 +140,35 @@ img {
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 50px;
+  }
+  .upcoming-matches {
+    flex-direction: column;
+  }
+  .upcoming-matches-left {
+    flex-direction: row;
+    background-color: transparent;
+    width: 100%;
+  }
+  .upcoming-matches-left > * {
+    flex: 1;
+  }
+  .upcoming-matches-left .primary-btn {
+    border: 1px solid rgb(232, 232, 232);
+  }
+  .upcoming-matches-right{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .upcoming-matches-right .card img{
+    width: 100%;
+    height: 200px;
+  }
+  .upcoming-matches-last-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    /* width: 100%; */
+    grid-column: 1 / -1;
   }
 }
 
@@ -95,5 +196,15 @@ img {
     max-width: 100%;
     padding: 0 10px;
   }
+  .upcoming-matches-left {
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+  }
+  .upcoming-matches-right{
+    grid-template-columns: 1fr;
+  }
+  .upcoming-matches-last-btn{
+    display: none;
+  }
 }
-
