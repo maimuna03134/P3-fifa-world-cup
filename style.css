@@ -8,6 +8,7 @@
 img {
   width: 100%;
 }
+/* container */
 .container {
   max-width: 1280px;
   margin: auto;
@@ -30,7 +31,7 @@ img {
   color: white;
   display: flex;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 30px;
 
   margin: 50px auto;
 }
@@ -44,8 +45,7 @@ img {
   line-height: 80px;
 }
 .banner-left p {
-  line-height: 26px;
-  text-align: left;
+  line-height: 24px;
   max-width: 80%;
   margin: 20px 0;
 }
@@ -55,3 +55,45 @@ img {
 .banner-right img {
   display: block;
 }
+
+/* Responsive Design - Media Queries */
+/* laptop/tap device*/
+@media screen and (max-width: 992px) {
+  /* container */
+  .container {
+    margin: 20px 20px;
+  }
+  /* banner */
+  .banner-left h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 50px;
+  }
+}
+
+/* mobile device */
+@media screen and (max-width: 768px) {
+  /* container */
+  .container {
+    margin: 10px;
+  }
+  /* banner */
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .banner .banner-left {
+    padding-left: 0;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+  .banner-left h2 {
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .banner-left p {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
